@@ -1,0 +1,71 @@
+Utilisateur : 
+	- id
+	- mail
+	- mot de passe
+	- date de création
+	- pseudo
+	- nom
+	- prénom
+	- pdp
+	- bio
+	- age
+	- dernier login
+
+Post : 
+	- id (post)
+	- id utilisateur
+	- date
+	- image
+	- description
+	- nombre de like
+	- is enabled (Masqué)
+
+Commentaire : 
+	- id (commentaire)
+	- id Post
+	- id utilisateur
+	- commentaire
+	- date
+	- is enabled (masqué)
+
+Follow : 
+	- Id 1
+	- Id 2
+	- date
+
+Like : 
+	- id du like
+	- id utilisateur
+	- id post
+	- date
+
+Message privé : 
+	- id du message
+	- id expediteur
+	- id destinataire
+	- message
+	- date
+	- is read
+
+Notifications : 
+	- id de la notification
+	- id utlisateur
+	- type (like,commentaire,follow, etc.)
+	- message
+	- date
+	- is_read
+
+----------------------------------------------------
+
+Fonctionnalité : 
+	- Suivre quelqu'un
+	- Feed de tes follows
+	- Like une photo
+	- Créer / Modifier un profil
+	- Créer / Supprimer / Modifier un post
+	- Messagerie privée
+	- Masqué des posts
+	- Supprimer des commentaires (les siens ou ceux sous ton post)
+	- Recevoir des notifications
+	- Rechercher des utlisateurs (des posts par tag ou mots-clé) <- En plus si possible
+
