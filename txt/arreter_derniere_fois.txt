@@ -1,1 +1,4 @@
-Page de configuration / paramètre du profile
+Page de modif User
+Affichage de base 
+Pourquoi faire comme avec les messages d'erreur mais en vert avec la success d'un changement 
+de profil après le sauvegarde un peu comme le message quand on est conncté avec success
