@@ -17,6 +17,10 @@
 					<li class="nav-item">
 						<a class="nav-link" href="php/code_php/logout.php">Déconnexion</a>
 					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="configprofil.php">PARAMETRE</a>
+					</li>
 				<?php else: ?>
 					<li>
 						<a href="login.php">

@@ -4,3 +4,4 @@
 	$usersStatement = $mysqlClient->prepare('SELECT * FROM Utilisateur');
 	$usersStatement->execute();
 	$users = $usersStatement->fetchAll();
+	
