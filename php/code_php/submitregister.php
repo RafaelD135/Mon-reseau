@@ -31,18 +31,15 @@ if (isset($postData['email']) &&  isset($postData['password']) && isset($postDat
 			if ($age >= 15)
 			{
 				foreach ($users as $user) {
-					if ($user['pseudoUtilisateur'] === $postData['pseudo'])
+					if ($user['mailUtilisateur'] === $postData['email'])
+					{
+						$_SESSION['LOGIN_ERROR_MESSAGE'] = 'L\'email choisie est déjà utilisé';
+						redirectToUrl('../../register.php');
+					}
+					if (strtolower($user['pseudoUtilisateur']) ===  strtolower($postData['pseudo']))
 					{
 						$_SESSION['LOGIN_ERROR_MESSAGE'] = 'Le pseudo est déjà utilisé';
 						redirectToUrl('../../register.php');
-					} else {
-						if ($user['mailUtilisateur'] === $postData['email'])
-						{
-							$_SESSION['LOGIN_ERROR_MESSAGE'] = 'L\'email choisie est déjà utilisé';
-							redirectToUrl('../../register.php');
-						} else {
-							$bret = true;
-						}
 					}
 				}
 			} else {
@@ -57,34 +54,33 @@ if (isset($postData['email']) &&  isset($postData['password']) && isset($postDat
 	}
 }
 
-if ($bret) {
-	$creationUtilisateur = $mysqlClient->prepare('
-							INSERT INTO utilisateur 
-							(mailUtilisateur,mdpUtilisateur,prenomUtilisateur,cheminPdpUtilisateur,creationUtilisateur,pseudoUtilisateur,nomUtilisateur,descriptionUtilisateur,ageUtilisateur, dernierLoginUtilisateur)
-							VALUES (:mail,:mdp,:prenom,:pdp,:creation,:pseudo,:nom,:description,:age,:dernierLogin);
-							');
-							$creationUtilisateur->execute([
-								'mail' => $postData['email'],
-								'mdp'=> $postData['password'],
-								'prenom'=> $postData['prenom'],
-								'nom' => $postData['nom'],
-								'pdp'=> "/image/default.png",
-								'creation' => $date,
-								'pseudo' => $postData['pseudo'],
-								'description' => null,
-								'age' => $postData['naissance'],
-								'dernierLogin' => $date,
-							]);
-							$users = $usersStatement->fetchAll();
 
-							$_SESSION['LOGGED_USER'] = [
-								'email' => $user['mailUtilisateur'],
-								'user_id' => $user['idUtilisateur'],
-								'pseudo' => $user['pseudoUtilisateur'],
-								'prenom' => $user['prenomUtilisateur'],
-								'nom' => $user['nomUtilisateur'],
-								'pdp' => $user['cheminPdpUtilisateur'],
-							];
-}
+$creationUtilisateur = $mysqlClient->prepare('
+						INSERT INTO utilisateur 
+						(mailUtilisateur,mdpUtilisateur,prenomUtilisateur,cheminPdpUtilisateur,creationUtilisateur,pseudoUtilisateur,nomUtilisateur,descriptionUtilisateur,ageUtilisateur, dernierLoginUtilisateur)
+						VALUES (:mail,:mdp,:prenom,:pdp,:creation,:pseudo,:nom,:description,:age,:dernierLogin);
+						');
+						$creationUtilisateur->execute([
+							'mail' => $postData['email'],
+							'mdp'=> $postData['password'],
+							'prenom'=> $postData['prenom'],
+							'nom' => $postData['nom'],
+							'pdp'=> "/image/default.png",
+							'creation' => $date,
+							'pseudo' => $postData['pseudo'],
+							'description' => null,
+							'age' => $postData['naissance'],
+							'dernierLogin' => $date,
+						]);
+						$users = $usersStatement->fetchAll();
+
+						$_SESSION['LOGGED_USER'] = [
+							'email' => $user['mailUtilisateur'],
+							'user_id' => $user['idUtilisateur'],
+							'pseudo' => $user['pseudoUtilisateur'],
+							'prenom' => $user['prenomUtilisateur'],
+							'nom' => $user['nomUtilisateur'],
+							'pdp' => $user['cheminPdpUtilisateur'],
+						];
 
 redirectToUrl('../../register.php');

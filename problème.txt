@@ -1,0 +1,4 @@
+- Doublon des pseudos et mail
+- Mettre les ages en INT au lieu de DATE (plus précis et évolue)
+- 15 ans minium mais 09-11-5000 fonctionne (Ajout d'une date maximum (celle du jour))
+- Problème de doublon de pseudo lié au minuscule et majuscule

@@ -64,7 +64,7 @@
 
 				<div>
 					<label for="naissance" class="form-label">Date de Naissance *</label>
-					<input type="date" class="form-control" id="naissance" name="naissance">
+					<input type="date" class="form-control" id="naissance" name="naissance" max="<?php $date = new DateTime(''); echo $date->format('Y-m-d'); ?>">
 				</div>
 
 				<br>
