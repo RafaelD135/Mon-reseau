@@ -36,6 +36,62 @@
 				<?php echo $profile['pseudo']; ?>
 			</h1>
 
+			<?php if (isset($_SESSION['LOGIN_ERROR_MESSAGE'])) : ?>
+					<div class="alert alert-danger" role="alert">
+						<?php echo $_SESSION['LOGIN_ERROR_MESSAGE'];
+						unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
+					</div>
+			<?php endif; ?>
+
+			<form method="POST" class="border border-primary mb-3" style="padding:10px;border-radius:10px;">
+				<div class="mb-3">
+					<label for="pdp" class="form-label"><img src="<?php echo $profile['pdp'];?>" alt="pdp" width="100px" height="100px" style="border-radius: 50%;"></label>
+					<input type="file" class="form-control-file" id="pdp" name="pdp">
+				</div>
+				<button type="submit" class="btn btn-primary">Sauvegarder</button>
+			</form>
+
+			<form method="POST" class="border border-primary" style="padding:10px;border-radius:10px;margin-bottom:10px;">
+
+				<div class="mb-3">
+					<label for="email" class="form-label">Email *</label>
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="email-help" placeholder="you@exemple.com">
+				</div>
+
+				<div class="mb-3">
+					<label for="nom" class="form-label">Nom</label>
+					<input type="texte" class="form-control" id="nom" name="nom" value="<?= $profile['nom'] ?>">
+				</div>
+
+				<div class="mb-3">
+					<label for="prenom" class="form-label">Prénom</label>
+					<input type="text" class="form-control" id="prenom" name="prenom" value="<?= $profile['prenom'] ?>">
+				</div>
+
+				<div class="mb-3">
+					<label for="password" class="form-label">Nouveau mot de passe</label>
+					<input type="password" class="form-control" id="password" name="password">
+				</div>
+
+				<div class="mb-3">
+					<label for="pseudo" class="form-label">Pseudo *</label>
+					<input type="text" class="form-control" id="pseudo" name="pseudo">
+				</div>
+
+				<div class="mb-3">
+					<label for="description" class="form-label">Biographie</label>
+					<input type="text" class="form-control" id="description" name="description">
+				</div>
+
+				<div class="mb-3">
+					<label for="naissance" class="form-label">Date de Naissance</label>
+					<input type="date" class="form-control" id="naissance" name="naissance" max="<?php $date = new DateTime(''); echo $date->format('Y-m-d'); ?>">
+				</div>
+
+				<button type="submit" class="btn btn-primary">Sauvegarder</button>
+
+			</form>
+
 			<!-- Si utilisateur/trice n'est pas connectée on affiche un message d'erreur -->
 		<?php else : ?>
 			<div class="alert alert-danger" role="alert">

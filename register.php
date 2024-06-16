@@ -62,12 +62,10 @@
 					<input type="text" class="form-control" id="pseudo" name="pseudo">
 				</div>
 
-				<div>
+				<div class="mb-3">
 					<label for="naissance" class="form-label">Date de Naissance *</label>
 					<input type="date" class="form-control" id="naissance" name="naissance" max="<?php $date = new DateTime(''); echo $date->format('Y-m-d'); ?>">
 				</div>
-
-				<br>
 
 				<button type="submit" class="btn btn-primary">Envoyer</button>
 				<div id="email-help" class="form-text">* Signifie que le champ est obligatoire.</div>
