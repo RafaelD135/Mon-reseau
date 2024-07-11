@@ -72,7 +72,6 @@ $creationUtilisateur = $mysqlClient->prepare('
 							'age' => $postData['naissance'],
 							'dernierLogin' => $date,
 						]);
-						$users = $usersStatement->fetchAll();
 
 						$_SESSION['LOGGED_USER'] = [
 							'email' => $user['mailUtilisateur'],

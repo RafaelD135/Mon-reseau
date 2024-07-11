@@ -42,8 +42,14 @@
 						unset($_SESSION['LOGIN_ERROR_MESSAGE']); ?>
 					</div>
 			<?php endif; ?>
+			<?php if (isset($_SESSION['IMAGE_MESSAGE'])) : ?>
+				<div class="alert alert-success" role="alert">
+					<?php echo $_SESSION['IMAGE_MESSAGE'];
+						unset($_SESSION['IMAGE_MESSAGE']); ?>
+				</div>
+			<?php endif; ?>
 
-			<form method="POST" class="border border-primary mb-3" style="padding:10px;border-radius:10px;">
+			<form method="POST" action="php/code_php/sumbitimage.php" enctype="multipart/form-data" class="border border-primary mb-3" style="padding:10px;border-radius:10px;">
 				<div class="mb-3">
 					<label for="pdp" class="form-label"><img src="<?php echo $profile['pdp'];?>" alt="pdp" width="100px" height="100px" style="border-radius: 50%;"></label>
 					<input type="file" class="form-control-file" id="pdp" name="pdp">
