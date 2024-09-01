@@ -45,6 +45,8 @@ if ( isset($image['pdp']) && $image['pdp']['error'] == 0)
 					'idUser' => $_SESSION['LOGGED_USER']['user_id'],
 					]);
 
+	$_SESSION['LOGGED_USER']['pdp'] = 'image/' . 'pdp' . $_SESSION['LOGGED_USER']['user_id'] . '.' . $extension;
+	
 	redirectToUrl('../../configprofil.php');
 }
 redirectToUrl('../../configprofil.php');

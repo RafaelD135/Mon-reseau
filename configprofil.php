@@ -26,7 +26,6 @@
 
 </head>
 <body>
-	<!-- inclusion de l'entête du site -->
 	<?php require_once(__DIR__ . '/php/element_page/header.php'); ?>
 	
 	<div class="container">
@@ -57,7 +56,7 @@
 				<button type="submit" class="btn btn-primary">Sauvegarder</button>
 			</form>
 
-			<form method="POST" class="border border-primary" style="padding:10px;border-radius:10px;margin-bottom:10px;">
+			<form method="POST" class="border border-primary bg-secondary" style="padding:10px;border-radius:10px;margin-bottom:10px;">
 
 				<div class="mb-3">
 					<label for="email" class="form-label">Email *</label>
@@ -98,13 +97,14 @@
 
 			</form>
 
-			<!-- Si utilisateur/trice n'est pas connectée on affiche un message d'erreur -->
 		<?php else : ?>
 			<div class="alert alert-danger" role="alert">
 				Vous devez être connecté pour accéder à cette page !
 			</div>
 		<?php endif; ?>
 	</div>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
 

@@ -9,16 +9,11 @@
 	$date = new DateTime('');
 	$date = $date->format('Y-m-d');
 
-	/**
- * On ne traite pas les super globales provenant de l'utilisateur directement,
- * ces données doivent être testées et vérifiées.
- */
 $postData = $_POST;
 
 $age = Age($postData['naissance']);
 $bret = false;
 
-// Validation du formulaire
 if (isset($postData['email']) &&  isset($postData['password']) && isset($postData['nom'])  && isset($postData['prenom'])  && isset($postData['pseudo']) && isset($postData['naissance'])) {
 
 	if (!empty($postData['email']) && !empty($postData['password']) && !empty($postData['nom']) && !empty($postData['prenom']) && !empty($postData['pseudo']) && !empty($postData['naissance'])) {
