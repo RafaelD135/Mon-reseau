@@ -6,11 +6,11 @@
 ## Objectif
 **Mon Réseau Social** est un projet qui me permet de travailler mes compétences en développement web, PHP ainsi qu'en SQL. Il est aussi l'occasion pour moi d'enrichir mon portfolio.
 
-## Fonctionnalités prévues
+## Fonctionnalités
 - Création de compte
 - Connexion à son compte
 - Modification de son profil (Pseudo, photo de profil, email, ...)
-- Poster du contenu (photos, vidéos, texte)
+- Poster du contenu (photos et texte)
 - Modifier / supprimer / masquer un de ses posts déjà existants
 - Liker du contenu
 - Ajouter des commentaires sous les contenus
@@ -18,7 +18,7 @@
 - Suivre ses amis
 - Messagerie privée
 - Fil d'actualité en fonction de sa liste d'amis
-- Rechercher des utilisateurs
+- Rechercher des utilisateurs (Pas encore)
 - Système de notifications dans l'application
 
 ## Outils et Technologies Utilisés
