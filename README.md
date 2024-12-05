@@ -30,7 +30,6 @@
 
 ## Auteur
 - **Nom de l'auteur:** RafaelD.
-- **Email:** debeinrafael@gmail.com
 - **GitHub:** [RafaelD135](https://github.com/RafaelD135)
 
 ## Statut du Projet
